@@ -1,0 +1,80 @@
+[System]
+Name='HASIL REVISI TUGAS MAMDANI'
+Type='mamdani'
+Version=2.0
+NumInputs=3
+NumOutputs=2
+NumRules=27
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='SENSOR_CAHAYA'
+Range=[0 100]
+NumMFs=3
+MF1='GELAP':'trimf',[-2969 20.79 50.5]
+MF2='MENDUNG':'trimf',[30 50 70]
+MF3='TERIK':'trimf',[50.5 80.2 2971]
+
+[Input2]
+Name='SENSOR_HUJAN'
+Range=[0 100]
+NumMFs=3
+MF1='HUJAN':'trimf',[-3000 20 50]
+MF2='GERIMIS':'trimf',[20 50 80]
+MF3='TIDAK_HUJAN':'trimf',[50 80 3000]
+
+[Input3]
+Name='SENSOR_PAKAIAN'
+Range=[0 100]
+NumMFs=3
+MF1='BASAH':'trimf',[-3000 20 50]
+MF2='LEMBAB':'trimf',[20 50 80]
+MF3='KERING':'trimf',[50 80 3000]
+
+[Output1]
+Name='MOTOR'
+Range=[0 1]
+NumMFs=3
+MF1='TUTUP':'trimf',[-30 0.2 0.5]
+MF2='SETENGAH_TERBUKA':'trimf',[0.2 0.5 0.8]
+MF3='BUKA':'trimf',[0.5 0.8 30]
+
+[Output2]
+Name='KIPAS'
+Range=[0 1]
+NumMFs=2
+MF1='BERHENTI':'trimf',[-30 0.2 0.7]
+MF2='BERPUTAR':'trimf',[0.2 0.8 30]
+
+[Rules]
+1 1 1, 1 2 (1) : 1
+1 1 2, 1 2 (1) : 1
+1 1 3, 1 1 (1) : 1
+1 2 1, 1 2 (1) : 1
+1 2 2, 1 2 (1) : 1
+1 2 3, 1 1 (1) : 1
+1 3 1, 1 2 (1) : 1
+1 3 2, 1 2 (1) : 1
+1 3 3, 1 1 (1) : 1
+2 1 1, 1 2 (1) : 1
+2 1 2, 1 2 (1) : 1
+2 1 3, 1 1 (1) : 1
+2 2 1, 1 2 (1) : 1
+2 2 2, 1 2 (1) : 1
+2 2 3, 1 1 (1) : 1
+2 3 1, 2 1 (1) : 1
+2 3 2, 2 1 (1) : 1
+2 3 3, 1 1 (1) : 1
+3 1 1, 1 2 (1) : 1
+3 1 2, 1 2 (1) : 1
+3 1 3, 1 1 (1) : 1
+3 2 1, 1 2 (1) : 1
+3 2 2, 1 2 (1) : 1
+3 2 3, 1 1 (1) : 1
+3 3 1, 3 1 (1) : 1
+3 3 2, 3 1 (1) : 1
+3 3 3, 1 1 (1) : 1
